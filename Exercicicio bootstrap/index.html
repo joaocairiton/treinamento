@@ -122,6 +122,9 @@
           <button type="reset" class="btn btn-danger">Cancel</button>
         </div>
       </form>
+
+      
+  
     </div>
     <div class="table-container">
       <table class="table">
@@ -204,7 +207,7 @@
             <td data-label="Active">
               <button class="btn btn-info">Editar</button>
               <button class="btn btn-danger">Excluir</button>
-              <button class="btn btn-warning">Visualizar</button>
+              <button class="btn btn-warning">Details</button>
             </td>
           </tr>
 
@@ -221,11 +224,22 @@
             <td data-label="Active">
               <button class="btn btn-info">Editar</button>
               <button class="btn btn-danger">Excluir</button>
-              <button class="btn btn-warning" id="show">Visualizar</button>
+              <button class="btn btn-warning" id="show">Details</button>
             </td>
           </tr>
 
         </tbody>
+        <dialog id="dialog">
+          <div class="card">
+            <img src="img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container">
+              <h4><b>Joao</b></h4>
+              <p>123.123.123-12</p>
+            </div>
+          </div>
+         
+          <button id="close">Close</button>
+        </dialog>
         <tfoot>
 
         </tfoot>
@@ -235,41 +249,31 @@
 
     <div class="order-list">
       <div class=" card order">
+        <h3>Não Ordenado</h3>
 
         <ul>
-          <li>CSS</li>
-          <li>PHP</li>
-          <li>JavaScript</li>
-          <li>HTML 5.0</li>
-          <li>MySQL (Banco de dados)</li>
+          <li>João</li>
+          <li>Maria</li>
+          <li>Godofredo</li>
+          <li>Fulano</li>
+          <li>Beltrano</li>
         </ul>
       </div>
 
       <div class="card naoOrder">
-      
+      <h3>ordenado</h3>
         <ol>
-         <li>HTML 5.0</li>
-         <li>CSS</li>
-         <li>JavaScript</li>
-         <li>PHP</li>
-         <li>MySQL (Banco de dados)</li>
+          <li>João</li>
+          <li>Maria</li>
+          <li>Godofredo</li>
+          <li>Fulano</li>
+          <li>Beltrano</li>
         </ol>
       </div>
 
     </div>
 
-    <dialog id="dialog">
-      <h2>tittle</h2>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur,
-        adipisicing elit. Modi totam, aliquam officia
-        officiis nam, neque facere animi nisi
-        delectus vel atque quibusdam ipsam sequi
-        impedit quisquam cum ratione sapiente. Quisquam!
-      </p>
-    </dialog>
-
+   
 
   </main>
 
@@ -278,7 +282,7 @@
   <footer>
     <span>Joao Cairiton</span>
   </footer>
-  <script src="main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
