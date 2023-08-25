@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div class="col-md-2 mb-2">
+        <input type="text" class="form-control" ng-model="buscar" name="nome" placeholder="Buscar">
+    </div>
+
+    <table class="table table-striped table-dark" ng-show="Cliente.length > 0">
+   
+        <tr>
+            <th></th>
+
+            <th><a href="" ng-click="ordernarPor('nome')">NOME</a></th>
+            <th>TELEFONE</th>
+            <th>E-MAIL</th> 
+            <th>DATA</th>
+            <th>OPERADORAS</th>
+        </tr>
+     
+        <tr ng-class="{selecionado: clientes.selecionado}" ng-repeat="clientes in Cliente | limitTo:20 | filter:buscar | orderBy: order:reverse ">
+            <td><input type="checkbox" ng-model="clientes.selecionado"/></td>
+     
+            <td>{{clientes.nome | name | ellipsis:10}}</td>
+            <td>{{clientes.telefone}}</td>
+            <td>{{clientes.email}}</td>
+            <td>{{clientes.data | date:'dd/MM/yyyy'}}</td>
+            <td>{{clientes.operadora.nome}}</td>
+        </tr>
+    
+    </table>
+</div>

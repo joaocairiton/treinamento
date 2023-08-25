@@ -1,0 +1,44 @@
+<div class="container">
+    
+
+
+    <form name="clienteForm" class="row g-3">
+        <div class="col-md-4">
+            <label  class="form-label">Nome</label>
+            <input type="text" class="form-control" ng-model="clientes.nome" name="nome" ng-required="true" ng-minlength="2" >
+            <span ng-show="clienteForm.nome.$error.required && clienteForm.nome.$dirty" style="color: red; font-size: 15px;" >Nome é Obrigatorio!</span>
+            <span ng-show="clienteForm.nome.$error.nome && clienteForm.nome.$dirty" style="color: red" minlength="true">Nome é invalido!</span>
+          </div>
+    
+          <div class="col-md-4">
+            <label  class="form-label">Telefone</label>
+            <input type="tel" class="form-control" ng-model="clientes.telefone" name="telefone" ng-required="true" ng-pattern="/^\+?\d{2}[- ]?\d{5}[- ]?\d{4}$/">
+            <span ng-show="clienteForm.telefone.$error.required && clienteForm.telefone.$dirty" style="color: red; font-size: 15px;">Telefone é Obrigatorio!</span>
+            <span ng-show="clienteForm.telefone.$error.email && clienteForm.telefone.$dirty" style="color: red">Email é invalido!</span>
+          </div>
+    
+          <div class="col-md-4">
+            <label  class="form-label">E-mail</label>
+            <input type="email" class="form-control" ng-model="clientes.email" name="email" ng-required="true">
+            <span ng-show="clienteForm.email.$error.required && clienteForm.email.$dirty" style="color: red; font-size: 15px; ">Email Obrigatorio!</span>
+            <span ng-show="clienteForm.email.$error.email && clienteForm.email.$dirty" style="color: red; font-size: 15px;">Email invalido!</span>
+          </div>
+          <div class="col-md-4">
+            <label  class="form-label">E-mail</label>
+            <input type="date" class="form-control" ng-model="clientes.data" name="data" ng-required="true">
+            <span ng-show="clienteForm.data.$error.required && clienteForm.data.$dirty" style="color: red; font-size: 15px; ">Data é Obrigatoria!</span>
+            <span ng-show="clienteForm.data.$error.data && clienteForm.data.$dirty" style="color: red; font-size: 15px;">Data é invalida!</span>
+          </div>
+        <div class="col-md-3">
+            <label  class="form-label">Qual operadora?</label>
+            <select class="form-control" ng-model="clientes.operadora" ng-options="operadora.nome for operadora in Operadoras">
+                <option value="">Selecione uma operadora</option>
+            </select>
+        </div>
+       
+        <button type="button" class="btn btn-primary" ng-click="addCliente(clientes)" ng-disabled="clienteForm.$invalid">Adicionar</button>
+        <button type="button" class="btn btn-danger" ng-click="removeCliente(Cliente)" ng-if="isClienteSelecionado(Cliente)" >Remover</button>
+    
+    </form>
+    
+    </div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt_BR" ng-app="listaCliente">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso de Angular</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    
+   
+
+
+    <script type="module" src="app/js/controllers/listaClienteCtrl.js"></script>
+
+
+    <script type="module" src="app/js/services/clienteService.js"></script>
+    <script type="module" src="app/js/services/operadoraService.js"></script>
+    <script type="module" src="app/js/value/configValue.js"></script>
+    <script type="module" src="app/js/filters/nameFilter.js"></script>
+    <script type="module" src="app/js/filters/ellipsisFilter.js"></script>
+
+
+
+
+  
+  
+
+
+ 
+
+
+    <link rel="stylesheet" href="view/header/header.css" />
+
+    <link rel="stylesheet" href="app/css/app.css" />
+
+    <link rel="stylesheet" href="view/footer/footer.css" />
+  </head>
+  <body ng-controller="listaClienteCtrl">
+    
+
+    <div class="py-5">
+      <h3>{{app}}</h3>
+    </div>
+
+    <div ng-include="'view/main/table/table.html'"></div>
+    <div ng-include="'view/main/formulario/formulario.html'"></div>
+
+    <div ng-include="'view/footer/footer.html'"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </body>
+</html>
