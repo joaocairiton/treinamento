@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.cairiton.mega.exception.NegocioException;
+import com.cairiton.mega.model.Bairro;
 import com.cairiton.mega.model.Endereco;
 import com.cairiton.mega.repository.EnderecoRepository;
 
@@ -14,22 +15,22 @@ public class EnderecoConfigService {
 	@Autowired
 	private EnderecoRepository enderecoRepository;
 	
+	@Autowired
+	private BairroConfigService bairroConfigService;
+	
+
 	public Endereco buscar (Integer enderecoId) {
-		return enderecoRepository.findById(enderecoId).orElseThrow(() -> new NegocioException("Bairro não encontrado! "));
+		return enderecoRepository.findById(enderecoId).orElseThrow(() -> new NegocioException("Endereco não encontrado! "));
 	}
 	
 	
 	@Transactional
 	public Endereco salvar(Endereco endereco) {
 		
-		/*
-		 * boolean bairroEmUso = bairroRepository.findByNome(bairro.getNome()) .stream()
-		 * .anyMatch(bairroExistente -> !bairroExistente.equals(bairro)); if
-		 * (bairroEmUso) { throw new
-		 * NegocioException("Já existe um bairro cadastrado com esse Nome!"); }
-		 */
-		 
+		Bairro bairro = bairroConfigService.buscar(endereco.getBairro().getCodigo());
 		
+		endereco.setBairro(bairro);
+
 		return enderecoRepository.save(endereco);
 	}
 	

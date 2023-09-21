@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,6 +42,19 @@ public class EnderecoController {
 	@PostMapping
 	public Endereco adicionar(@Valid @RequestBody Endereco endereco) {
 		return enderecoConfigService.salvar(endereco);
+	}
+	@PutMapping("/{enderecoId}")
+	public ResponseEntity<Endereco> atualizar(@PathVariable Integer enderecoId, @Valid @RequestBody Endereco endereco) {
+
+		if (!enderecoRepository.existsById(enderecoId)) {
+			return ResponseEntity.notFound().build();
+
+		}
+
+		endereco.setCodigo(enderecoId);
+		endereco = enderecoConfigService.salvar(endereco);
+
+		return ResponseEntity.ok(endereco);
 	}
 
 	@DeleteMapping("/{enderecoId}")

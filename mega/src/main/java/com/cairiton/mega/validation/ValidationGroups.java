@@ -5,5 +5,11 @@ public interface ValidationGroups {
 	public interface BairroId {
 
 	}
+	
+	public interface ProfissaoId {
+
+	}
+	
+	
 
 }
