@@ -5,10 +5,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class MegaApplicationTests {
-    
-    @Test
-    public void contextLoads() {
-        
-    }
-    
+
+	@Test
+	void contextLoads() {
+	}
+
 }

@@ -1,0 +1,26 @@
+
+server:
+  port: 8080
+  error:
+    include-stacktrace: never
+    
+spring:
+  profiles:
+    active: trainee
+    
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/db_mega
+    username: postgres
+    password: 153624
+    
+  #jpa:
+  # hibernate:
+    #ddl-auto: update
+#    show-sql: true
+    ##database: postgresql
+    # database-platform: org.hibernate.dialect.PostgreSQLDialect
+  #jpa:
+   # database-platform: org.hibernate.dialect.PostgreSQLDialect
+    ##open-in-view: false
+    ##generate-ddl: true
