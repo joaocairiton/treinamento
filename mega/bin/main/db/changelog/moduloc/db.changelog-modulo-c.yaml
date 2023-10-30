@@ -1,0 +1,21 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 20231009-cria-tabela-profissao
+      author: nome-sobrenome
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: sqls/20231009-cria-tabela-profissao.sql
+            relativeToChangelogFile: true
+            dbms: postgresql
+
+  - changeSet:
+      id: 20231009-insere-profissao
+      author: nome-sobrenome
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: sqls/20231009-insere-profissao.sql
+            relativeToChangelogFile: true
+            dbms: postgresql
